@@ -10,6 +10,13 @@ const Header = ({presupuesto, setPresupuesto, isValidPresupuesto, setIsValidPres
 
     const [animarModal, setAnimarModal] = useState(false)
 
+    const [gastos, setGastos] = useState([])
+
+
+    const guardarGasto = (gasto) => {
+        console.log(gasto)
+    }
+
     const handleNuevoGasto = () => {
         setModal(true)
 
@@ -44,8 +51,10 @@ const Header = ({presupuesto, setPresupuesto, isValidPresupuesto, setIsValidPres
         {modal && <Modal 
                     setModal={setModal} 
                     animarModal={animarModal}
-                    setAnimarModal={setAnimarModal} />} 
-
+                    setAnimarModal={setAnimarModal} 
+                    guardarGasto={guardarGasto}
+                    />} 
+                    
             
     </header>
   )
