@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from './components/Header'
 import NuevoPresupuesto from './components/NuevoPresupuesto'
 
+
 function App() {
   
 
@@ -18,6 +19,7 @@ function App() {
       isValidPresupuesto={isValidPresupuesto}
       setIsValidPresupuesto={setIsValidPresupuesto}
       />
+      
     </div>
   
   
