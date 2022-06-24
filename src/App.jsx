@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import NuevoPresupuesto from './components/NuevoPresupuesto'
 import ControlPresupuesto from './components/ControlPresupuesto'
@@ -16,10 +16,18 @@ function App() {
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false)
 
   const [modal, setModal] = useState(false)
-    const [animarModal, setAnimarModal] = useState(false)
-    const [gastos, setGastos] = useState([])
+  const [animarModal, setAnimarModal] = useState(false)
+  const [gastos, setGastos] = useState([])
 
-    const handleNuevoGasto = () => {
+  const [gastoEditar, setGastoEditar] = useState({})
+
+  useEffect(() => {
+     if(Object.keys(gastoEditar).length > 0){
+       handleNuevoGasto()
+     }
+  }, [gastoEditar]);
+
+  const handleNuevoGasto = () => {
       setModal(true)
 
       setTimeout(() => {
@@ -71,6 +79,7 @@ function App() {
             <main>
                 <ListadoGastos
                     gastos={gastos}
+                    setGastoEditar={setGastoEditar}
                 />
             </main>
         
