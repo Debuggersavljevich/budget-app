@@ -38,8 +38,11 @@ const Header = ({presupuesto, setPresupuesto, isValidPresupuesto, setIsValidPres
 
   return (
     <header>
+        
         <h1>Planificador de Gastos</h1>
-         
+        
+
+        
                     
             
     </header>
